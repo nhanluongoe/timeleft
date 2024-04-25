@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import LifeVisualization from '@/components/life-visualization.vue';
+import AgeForm from "@/components/age-form.vue";
+import LifeVisualization from "@/components/life-visualization.vue";
+import { ref } from "vue";
 
-const expectedAge = ref(0);   
+const expectedAge = ref(0);
 const age = ref(0);
+
+function setExpectedAge(value: number) {
+  expectedAge.value = value;
+}
+
+function setAge(value: number) {
+  age.value = value;
+}
 </script>
 
 <template>
-
-  <label for="age">What is your age?</label>
-  <input id="age" type="number" v-model="age"></input>
-
-  <label for="expected-age">How old do you expect to live?</label>
-  <input id="expected-age" type="number" v-model="expectedAge" />
-
-  <LifeVisualization :expected-age="expectedAge" :age="age"/>
+  <AgeForm @set-age=" setAge " @set-expected-age=" setExpectedAge " />
+  <LifeVisualization :expected-age=" expectedAge " :age=" age " />
 </template>
