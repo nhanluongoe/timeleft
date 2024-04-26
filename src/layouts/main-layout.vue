@@ -24,6 +24,8 @@
       <RouterView />
     </main>
 
-    <footer>Footer</footer>
+    <footer class="my-5">
+      <p class="text-center text-gray-700">Made By <a href="https://nhanluongoe.me" class="font-semibold">Nhan Luong</a> with 🍀</p>
+    </footer>
   </div>
 </template>
