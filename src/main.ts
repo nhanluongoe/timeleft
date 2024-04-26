@@ -2,11 +2,8 @@ import { createApp } from "vue";
 import router from "./routes";
 import "./style.css";
 import App from "./app.vue";
-import PrimeVue from "primevue/config";
 
-const app = createApp(App).use(router).use(PrimeVue, {
-  unstyled: true,
-});
+const app = createApp(App).use(router);
 
 app.config.globalProperties.$filters = {
   formatNumber(value: number) {
