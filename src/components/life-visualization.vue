@@ -26,7 +26,6 @@ const expectedMonths = computed(() => props.expectedAge * MONTHS_PER_YEAR);
 
 <template>
   <div class="w-full flex flex-col gap-8">
-
     <LifeDots title="In Days" :value=" days " :expected-value=" expectedDays " />
     <LifeDots title="In Weeks" :value=" weeks " :expected-value=" expectedWeeks " />
     <LifeDots title="In Months" :value=" months " :expected-value=" expectedMonths " />

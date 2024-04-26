@@ -8,6 +8,12 @@
     background-image: linear-gradient(135deg, #b5f7eb 0%, #9face6 100%);
   }
 
+  .disabled-btn {
+    @apply bg-gray-200;
+    background-image: none;
+    cursor: not-allowed;
+  }
+
   .link-btn {
     @apply px-3 py-1 rounded-2xl w-1/4 font-semibold text-[#9face6];
   }
