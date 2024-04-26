@@ -4,14 +4,23 @@
 
 @layer components {
   .primary-btn {
-    @apply bg-green-700 px-3 py-1 rounded-md text-white;
+    @apply px-3 py-1 rounded-2xl text-white w-1/4 font-semibold;
+    background-image: linear-gradient(135deg, #b5f7eb 0%, #9face6 100%);
+  }
+
+  .link-btn {
+    @apply px-3 py-1 rounded-2xl w-1/4 font-semibold text-[#9face6];
   }
 
   .input {
-    @apply border border-gray-300 px-2 py-1 rounded-md w-full;
+    @apply border border-gray-100 px-2 py-1 rounded-2xl w-full outline-none text-7xl text-center;
   }
 
   .input-label {
-    @apply block text-gray-700 mb-2;
+    @apply block text-gray-600 mb-6 text-center font-semibold text-xl;
   }
+}
+
+body {
+  @apply text-gray-600;
 }
