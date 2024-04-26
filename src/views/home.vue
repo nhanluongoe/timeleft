@@ -3,7 +3,7 @@ import AgeForm from "@/components/age-form.vue";
 import LifeVisualization from "@/components/life-visualization.vue";
 import { ref } from "vue";
 
-type Step = "input" | "result"; 
+type Step = "input" | "result";
 
 const age = ref(0);
 const expectedAge = ref(0);
@@ -17,12 +17,16 @@ function setAge(value: number) {
   age.value = value;
 }
 
-function complete () {
+function complete() {
   step.value = "result";
+}
+
+function goBack() {
+  step.value = "input";
 }
 </script>
 
 <template>
-  <AgeForm @set-age=" setAge " @set-expected-age=" setExpectedAge " v-if="step === 'input'" @on-completed="complete"/>
-  <LifeVisualization :expected-age=" expectedAge " :age=" age " v-if="step === 'result'"/>
+  <AgeForm @set-age=" setAge " @set-expected-age=" setExpectedAge " v-if="step === 'input'" @on-completed=" complete " />
+  <LifeVisualization :expected-age=" expectedAge " :age=" age " v-if="step === 'result'" @on-completed="goBack"/>
 </template>
