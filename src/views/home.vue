@@ -5,8 +5,8 @@ import { ref } from "vue";
 
 type Step = "input" | "result"; 
 
-const expectedAge = ref(0);
 const age = ref(0);
+const expectedAge = ref(0);
 const step = ref<Step>("input");
 
 function setExpectedAge(value: number) {
