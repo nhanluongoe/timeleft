@@ -19,13 +19,13 @@ const timeLeft = computed(() => props.expectedValue - props.value);
       <p class="text-center">
         You have lived for
         <strong>
-          {{ value }}
+          {{ $filters.formatNumber(value) }}
         </strong>
         <span class="inline-block w-3 h-3 bg-gray-400 rounded-full ml-1">
         </span>
         and have
         <strong>
-          {{ expectedValue }}
+          {{ $filters.formatNumber(expectedValue - value) }}
         </strong>
         <span class="inline-block w-3 h-3 bg-[#6980e5] rounded-full ml-1">
         </span>
