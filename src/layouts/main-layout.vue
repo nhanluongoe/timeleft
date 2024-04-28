@@ -5,7 +5,7 @@ import Footer from "@/components/footer.vue";
 <template>
   <div class="min-h-screen flex flex-col justify-between gradient-bg">
     <header class="m-5 relative flex mx-auto">
-      <img src="/images/logo.png" alt="logo" class="w-36" />
+      <img src="/images/logo.png" alt="logo" class="w-28 md:w-36" />
     </header>
 
     <main class="container mx-auto">

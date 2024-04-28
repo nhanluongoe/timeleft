@@ -39,7 +39,7 @@ function setMode(newMode: Mode) {
 </script>
 
 <template>
-  <div class="w-3/5 mx-auto flex gap-6">
+  <div class="w-4/5 md:w-3/5 mx-auto flex gap-6 mb-12 md:mb-5">
     <button
       class="secondary-btn capitalize"
       v-for="mode in modes"
@@ -48,7 +48,7 @@ function setMode(newMode: Mode) {
       {{ mode }}
     </button>
   </div>
-  <div class="w-full">
+  <div class="w-4/5 md:w-full mx-auto">
     <button class="link-btn w-20 mb-5" @click="complete">← Back</button>
     <LifeDots
       type="days"

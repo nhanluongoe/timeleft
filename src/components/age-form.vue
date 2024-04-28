@@ -45,7 +45,7 @@ function goBack() {
 
 <template>
   <div
-    class="py-8 px-16 rounded-2xl md:w-1/2 mx-auto bg-white shadow-xl relative"
+    class="py-8 px-16 rounded-2xl md:w-1/2 mx-5 md:mx-auto bg-white shadow-xl relative"
   >
     <button
       class="link-btn absolute top-2 left-0"

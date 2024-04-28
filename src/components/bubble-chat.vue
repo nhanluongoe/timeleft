@@ -11,15 +11,15 @@ defineProps<Props>();
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 250px;
-  height: 200px;
 }
 </style>
 
 <template>
   <div
-    class="absolute right-0 translate-x-[10%] top-0 -translate-y-[80%] flex justify-center items-center bubble-chat"
+    class="absolute right-0 translate-x-[10%] top-0 -translate-y-[80%] flex justify-center items-center bubble-chat md:w-[250px] md:h-[200px] w-[150px] h-[120px]"
   >
-    <p class="text-white w-4/5 text-center text-lg font-semibold">{{ msg }}</p>
+    <p class="text-white w-4/5 text-center text-sm md:text-lg font-semibold">
+      {{ msg }}
+    </p>
   </div>
 </template>

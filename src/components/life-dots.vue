@@ -30,12 +30,12 @@ const bubbleMsg = computed(() => {
 
 <template>
   <section
-    class="py-8 px-16 rounded-2xl flex flex-col gap-5 justify-center w-full mx-auto bg-white shadow-xl relative"
+    class="py-4 px-6 md:py-8 md:px-16 rounded-2xl flex flex-col gap-5 justify-center mx-auto bg-white shadow-xl relative"
     :id="props.type"
   >
     <BubbleChat :msg="bubbleMsg" />
     <h1 class="text-xl font-semibold text-center text-gray-500">{{ title }}</h1>
-    <div class="flex flex-wrap gap-1">
+    <div class="flex flex-wrap gap-1 items-center justify-center">
       <div
         v-for="_ in Array(value)"
         class="h-2 w-2 rounded-full bg-gray-400"
