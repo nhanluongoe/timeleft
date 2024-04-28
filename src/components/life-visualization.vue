@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import LifeDots from "./life-dots.vue";
 
 type Props = {
@@ -7,12 +7,17 @@ type Props = {
   age: number;
 };
 
+type Mode = "days" | "weeks" | "months" | "years";
+
 const DAYS_PER_YEAR = 365;
 const WEEKS_PER_YEAR = 52;
 const MONTHS_PER_YEAR = 12;
 
 const props = defineProps<Props>();
-const emits = defineEmits(["onCompleted"]);
+const emits = defineEmits(["onBack"]);
+
+const mode = ref<Mode>("days");
+const modes: Mode[] = ["days", "weeks", "months", "years"];
 
 const age = computed(() => props.age);
 const days = computed(() => props.age * DAYS_PER_YEAR);
@@ -25,16 +30,25 @@ const expectedWeeks = computed(() => props.expectedAge * WEEKS_PER_YEAR);
 const expectedMonths = computed(() => props.expectedAge * MONTHS_PER_YEAR);
 
 function complete() {
-  emits("onCompleted");
+  emits("onBack");
+}
+
+function setMode(newMode: Mode) {
+  mode.value = newMode;
 }
 </script>
 
 <template>
-  <div class="w-full flex flex-col gap-8">
-    <button class="primary-btn w-20 shadow-md mb-5" @click="complete">← Back</button>
-    <LifeDots title="In Days" :value=" days " :expected-value=" expectedDays " />
-    <LifeDots title="In Weeks" :value=" weeks " :expected-value=" expectedWeeks " />
-    <LifeDots title="In Months" :value=" months " :expected-value=" expectedMonths " />
-    <LifeDots title="In Years" :value=" age " :expected-value=" expectedAge " />
+  <div class="w-3/5 mx-auto flex gap-6">
+    <button class="secondary-btn capitalize" v-for="mode in modes" @click="setMode(mode)">
+      {{ mode }}
+    </button>
+  </div>
+  <div class="w-full">
+    <button class="secondary-btn w-20 shadow-md mb-5" @click="complete">← Back</button>
+    <LifeDots type="days" :value=" days " :expected-value=" expectedDays " v-if="mode === 'days'"/>
+    <LifeDots type="weeks" :value=" weeks " :expected-value=" expectedWeeks " v-if="mode === 'weeks'"/>
+    <LifeDots type="months" :value=" months " :expected-value=" expectedMonths " v-if="mode === 'months'"/>
+    <LifeDots type="years" :value=" age " :expected-value=" expectedAge " v-if="mode === 'years'"/>
   </div>
 </template>

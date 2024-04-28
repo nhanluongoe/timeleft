@@ -18,6 +18,11 @@
     background-image: linear-gradient(135deg, #b5f7eb 0%, #9face6 100%);
   }
 
+  .secondary-btn {
+    @apply px-3 py-1 rounded-2xl text-white w-1/4 font-semibold shadow-md;
+    background-image: linear-gradient(135deg, #97b6ec 0%, #7285d7 100%);
+  }
+
   .disabled-btn {
     @apply bg-gray-200;
     background-image: none;
