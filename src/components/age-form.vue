@@ -7,15 +7,15 @@ const emit = defineEmits([ "setExpectedAge", "setAge", "onCompleted" ]);
 
 const step = ref<Step>("age");
 
-const age = ref();
-const expectedAge = ref();
+const age = ref<number>();
+const expectedAge = ref<number>();
 
-function handleFirstStep(value: number) {
+function handleFirstStep(value: number | undefined) {
     emit("setAge", value);
     step.value = "expected-age";
 }
 
-function complete(value: number) {
+function complete(value: number | undefined) {
     emit("setExpectedAge", value);
     step.value = "age";
     emit("onCompleted");
@@ -37,8 +37,8 @@ function goBack() {
                 <label for="age" class="input-label">What is your age?</label>
                 <input id="age" type="number" v-model=" age " class="input" min="0" max="150"></input>
             </div>
-            <button @click="handleFirstStep(age)" class="primary-btn" :class=" { 'disabled-btn': age === 0 } "
-                :disabled=" age === 0 ">Next</button>
+            <button @click="handleFirstStep(age)" class="primary-btn" :class=" { 'disabled-btn': !age } "
+                :disabled=" !age ">Next</button>
         </template>
 
         <template v-if="step === 'expected-age'">
@@ -46,8 +46,8 @@ function goBack() {
                 <label for="expected-age" class="input-label">How old do you expect to live?</label>
                 <input id="expected-age" type="number" v-model=" expectedAge " class="input" min="0" max="150"></input>
             </div>
-            <button @click="complete(expectedAge)" class="primary-btn" :class=" { 'disabled-btn': expectedAge === 0 } "
-                :disabled=" expectedAge === 0 ">Let's see!</button>
+            <button @click="complete(expectedAge)" class="primary-btn" :class=" { 'disabled-btn': !expectedAge } "
+                :disabled=" !expectedAge ">Let's see!</button>
         </template>
     </div>
 </template>
