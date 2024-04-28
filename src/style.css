@@ -29,7 +29,7 @@
   }
 
   .input {
-    @apply border border-gray-200 px-2 py-1 rounded-2xl w-full outline-none text-7xl text-center;
+    @apply border border-gray-200 px-2 py-1 rounded-2xl w-36 outline-none text-7xl text-center mx-auto;
   }
 
   .input-label {
