@@ -35,7 +35,7 @@ function goBack() {
         <template v-if="step === 'age'">
             <div>
                 <label for="age" class="input-label">What is your age?</label>
-                <input id="age" type="number" v-model=" age " class="input" min="0"></input>
+                <input id="age" type="number" v-model=" age " class="input" min="0" max="150"></input>
             </div>
             <button @click="handleFirstStep(age)" class="primary-btn" :class=" { 'disabled-btn': age === 0 } "
                 :disabled=" age === 0 ">Next</button>
@@ -44,7 +44,7 @@ function goBack() {
         <template v-if="step === 'expected-age'">
             <div>
                 <label for="expected-age" class="input-label">How old do you expect to live?</label>
-                <input id="expected-age" type="number" v-model=" expectedAge " class="input" min="0"></input>
+                <input id="expected-age" type="number" v-model=" expectedAge " class="input" min="0" max="150"></input>
             </div>
             <button @click="complete(expectedAge)" class="primary-btn" :class=" { 'disabled-btn': expectedAge === 0 } "
                 :disabled=" expectedAge === 0 ">Let's see!</button>
