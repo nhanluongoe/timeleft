@@ -27,27 +27,44 @@ function goBack() {
 
 </script>
 
+<style scoped>
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-enter-from {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+</style>
+
 <template>
-    <div
-        class="py-8 px-16 rounded-2xl flex flex-col gap-5 justify-center items-center md:w-1/2 mx-auto bg-white shadow-xl relative">
+    <div class="py-8 px-16 rounded-2xl  md:w-1/2 mx-auto bg-white shadow-xl relative">
         <button class="link-btn absolute top-2 left-0" :class=" { invisible: step === 'age' } " @click=" goBack ">←
             Back</button>
-        <template v-if="step === 'age'">
-            <div>
-                <label for="age" class="input-label">What is your age?</label>
-                <input id="age" type="number" v-model=" age " class="input" min="0" max="150"></input>
-            </div>
-            <button @click="handleFirstStep(age)" class="primary-btn" :class=" { 'disabled-btn': !age } "
-                :disabled=" !age ">Next</button>
-        </template>
+        <Transition name="slide-fade">
 
-        <template v-if="step === 'expected-age'">
-            <div>
-                <label for="expected-age" class="input-label">How old do you expect to live?</label>
-                <input id="expected-age" type="number" v-model=" expectedAge " class="input" min="0" max="150"></input>
+            <div v-if="step === 'age'" class="flex flex-col gap-5 justify-center items-center">
+                <div>
+                    <label for="age" class="input-label">What is your age?</label>
+                    <input id="age" type="number" v-model=" age " class="input" min="0" max="150"></input>
+                </div>
+                <button @click="handleFirstStep(age)" class="primary-btn" :class=" { 'disabled-btn': !age } "
+                    :disabled=" !age ">Next</button>
             </div>
-            <button @click="complete(expectedAge)" class="primary-btn" :class=" { 'disabled-btn': !expectedAge } "
-                :disabled=" !expectedAge ">Let's see!</button>
-        </template>
+        </Transition>
+
+        <Transition name="slide-fade">
+
+            <div v-if="step === 'expected-age'" class="flex flex-col gap-5 justify-center items-center">
+                <div>
+                    <label for="expected-age" class="input-label">How old do you expect to live?</label>
+                    <input id="expected-age" type="number" v-model=" expectedAge " class="input" min="0"
+                        max="150"></input>
+                </div>
+                <button @click="complete(expectedAge)" class="primary-btn" :class=" { 'disabled-btn': !expectedAge } "
+                    :disabled=" !expectedAge ">Let's see!</button>
+            </div>
+        </Transition>
     </div>
 </template>
