@@ -10,8 +10,8 @@
 
 <template>
   <div class="min-h-screen flex flex-col justify-between gradient-bg">
-    <header class="m-5">
-      <h1 class="text-center text-5xl font-bold">Time Left</h1>
+    <header class="m-5 relative">
+      <img src="/images/logo.png" alt="logo" class="w-44 absolute left-1/2 -translate-x-1/2" />
     </header>
 
     <main class="container mx-auto">
