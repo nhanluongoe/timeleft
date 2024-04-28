@@ -12,8 +12,8 @@ import Footer from '@/components/footer.vue';
 
 <template>
   <div class="min-h-screen flex flex-col justify-between gradient-bg">
-    <header class="m-5 relative">
-      <img src="/images/logo.png" alt="logo" class="w-44 absolute left-1/2 -translate-x-1/2" />
+    <header class="m-5 relative flex mx-auto">
+      <img src="/images/logo.png" alt="logo" class="w-36" />
     </header>
 
     <main class="container mx-auto">
