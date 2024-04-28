@@ -28,6 +28,8 @@ const bubbleMsg = computed(() => {
 })
 </script>
 
+
+
 <template>
   <section class="py-8 px-16 rounded-2xl flex flex-col gap-5 justify-center w-full mx-auto bg-white shadow-xl relative"
     :id=" props.type ">

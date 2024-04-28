@@ -45,7 +45,7 @@ function setMode(newMode: Mode) {
     </button>
   </div>
   <div class="w-full">
-    <button class="secondary-btn w-20 shadow-md mb-5" @click="complete">← Back</button>
+    <button class="link-btn w-20 mb-5" @click="complete">← Back</button>
     <LifeDots type="days" :value=" days " :expected-value=" expectedDays " v-if="mode === 'days'"/>
     <LifeDots type="weeks" :value=" weeks " :expected-value=" expectedWeeks " v-if="mode === 'weeks'"/>
     <LifeDots type="months" :value=" months " :expected-value=" expectedMonths " v-if="mode === 'months'"/>
