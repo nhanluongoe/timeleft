@@ -40,15 +40,39 @@ function setMode(newMode: Mode) {
 
 <template>
   <div class="w-3/5 mx-auto flex gap-6">
-    <button class="secondary-btn capitalize" v-for="mode in modes" @click="setMode(mode)">
+    <button
+      class="secondary-btn capitalize"
+      v-for="mode in modes"
+      @click="setMode(mode)"
+    >
       {{ mode }}
     </button>
   </div>
   <div class="w-full">
     <button class="link-btn w-20 mb-5" @click="complete">← Back</button>
-    <LifeDots type="days" :value=" days " :expected-value=" expectedDays " v-if="mode === 'days'"/>
-    <LifeDots type="weeks" :value=" weeks " :expected-value=" expectedWeeks " v-if="mode === 'weeks'"/>
-    <LifeDots type="months" :value=" months " :expected-value=" expectedMonths " v-if="mode === 'months'"/>
-    <LifeDots type="years" :value=" age " :expected-value=" expectedAge " v-if="mode === 'years'"/>
+    <LifeDots
+      type="days"
+      :value="days"
+      :expected-value="expectedDays"
+      v-if="mode === 'days'"
+    />
+    <LifeDots
+      type="weeks"
+      :value="weeks"
+      :expected-value="expectedWeeks"
+      v-if="mode === 'weeks'"
+    />
+    <LifeDots
+      type="months"
+      :value="months"
+      :expected-value="expectedMonths"
+      v-if="mode === 'months'"
+    />
+    <LifeDots
+      type="years"
+      :value="age"
+      :expected-value="expectedAge"
+      v-if="mode === 'years'"
+    />
   </div>
 </template>

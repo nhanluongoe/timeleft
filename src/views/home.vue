@@ -27,6 +27,16 @@ function goBack() {
 </script>
 
 <template>
-  <AgeForm @set-age=" setAge " @set-expected-age=" setExpectedAge " v-if="step === 'input'" @on-completed=" complete " />
-  <LifeVisualization :expected-age=" expectedAge " :age=" age " v-if="step === 'result'" @on-back="goBack"/>
+  <AgeForm
+    @set-age="setAge"
+    @set-expected-age="setExpectedAge"
+    v-if="step === 'input'"
+    @on-completed="complete"
+  />
+  <LifeVisualization
+    :expected-age="expectedAge"
+    :age="age"
+    v-if="step === 'result'"
+    @on-back="goBack"
+  />
 </template>

@@ -1,14 +1,6 @@
 <script setup lang="ts">
-import Footer from '@/components/footer.vue';
+import Footer from "@/components/footer.vue";
 </script>
-
-
-<style scoped>
-.gradient-bg {
-  background-image: linear-gradient(135deg, #b5f7eb 0%, #9face6 100%);
-}
-</style>
-
 
 <template>
   <div class="min-h-screen flex flex-col justify-between gradient-bg">
@@ -23,3 +15,9 @@ import Footer from '@/components/footer.vue';
     <Footer />
   </div>
 </template>
+
+<style scoped>
+.gradient-bg {
+  background-image: linear-gradient(135deg, #b5f7eb 0%, #9face6 100%);
+}
+</style>

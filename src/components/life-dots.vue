@@ -11,34 +11,40 @@ type Props = {
 const props = defineProps<Props>();
 
 const timeLeft = computed(() => props.expectedValue - props.value);
-const title = computed(() => `In ${ props.type }`.toUpperCase())
+const title = computed(() => `In ${props.type}`.toUpperCase());
 const bubbleMsg = computed(() => {
-  if (props.type === 'days') {
-    return 'Looks like you have a lot of time left! 🥳'
+  if (props.type === "days") {
+    return "Looks like you have a lot of time left! 🥳";
   }
-  if (props.type === 'weeks') {
-    return 'Still a lot of time to enjoy! 🎉'
-  }
-
-  if (props.type === 'months') {
-    return 'Not much as you think, right? 🤔'
+  if (props.type === "weeks") {
+    return "Still a lot of time to enjoy! 🎉";
   }
 
-  return 'Time flies fast, enjoy it! 🙂'
-})
+  if (props.type === "months") {
+    return "Not much as you think, right? 🤔";
+  }
+
+  return "Time flies fast, enjoy it! 🙂";
+});
 </script>
 
-
-
 <template>
-  <section class="py-8 px-16 rounded-2xl flex flex-col gap-5 justify-center w-full mx-auto bg-white shadow-xl relative"
-    :id=" props.type ">
-    <BubbleChat :msg=" bubbleMsg " />
+  <section
+    class="py-8 px-16 rounded-2xl flex flex-col gap-5 justify-center w-full mx-auto bg-white shadow-xl relative"
+    :id="props.type"
+  >
+    <BubbleChat :msg="bubbleMsg" />
     <h1 class="text-xl font-semibold text-center text-gray-500">{{ title }}</h1>
     <div class="flex flex-wrap gap-1">
-      <div v-for="_ in Array(value)" class="h-2 w-2 rounded-full bg-gray-400"></div>
+      <div
+        v-for="_ in Array(value)"
+        class="h-2 w-2 rounded-full bg-gray-400"
+      ></div>
       <template v-if="timeLeft > 0">
-        <div v-for="_ in Array(timeLeft)" class="h-2 w-2 rounded-full bg-[#4f80db]"></div>
+        <div
+          v-for="_ in Array(timeLeft)"
+          class="h-2 w-2 rounded-full bg-[#4f80db]"
+        ></div>
       </template>
     </div>
     <div>

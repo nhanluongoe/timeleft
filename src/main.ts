@@ -5,7 +5,7 @@ import App from "./app.vue";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { LaGithubAlt } from "oh-vue-icons/icons";
 
-addIcons(LaGithubAlt)
+addIcons(LaGithubAlt);
 
 const app = createApp(App).use(router).component("v-icon", OhVueIcon);
 
