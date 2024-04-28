@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Footer from '@/components/footer.vue';
+</script>
 
 
 <style scoped>
@@ -18,9 +20,6 @@
       <RouterView />
     </main>
 
-    <footer class="m-5">
-      <p class="text-center text-gray-700">Made by <a href="https://nhanluongoe.me" class="font-semibold">Nhan Luong</a>
-        with 🍀</p>
-    </footer>
+    <Footer />
   </div>
 </template>
