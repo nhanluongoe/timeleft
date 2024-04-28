@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield !important;
+    margin: 0;
+  }
+}
+
 @layer components {
   .primary-btn {
     @apply px-3 py-1 rounded-2xl text-white w-1/4 font-semibold;
