@@ -7,8 +7,8 @@ const emit = defineEmits([ "setExpectedAge", "setAge", "onCompleted" ]);
 
 const step = ref<Step>("age");
 
-const age = ref(0);
-const expectedAge = ref(0);
+const age = ref();
+const expectedAge = ref();
 
 function handleFirstStep(value: number) {
     emit("setAge", value);
