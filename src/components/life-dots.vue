@@ -13,11 +13,8 @@ const props = defineProps<Props>();
 const timeLeft = computed(() => props.expectedValue - props.value);
 const title = computed(() => `In ${props.type}`.toUpperCase());
 const bubbleMsg = computed(() => {
-  if (props.type === "days") {
-    return "Looks like you have a lot of time left! 🥳";
-  }
   if (props.type === "weeks") {
-    return "Still a lot of time to enjoy! 🎉";
+    return "Looks like you have a lot of time left! 😄";
   }
 
   if (props.type === "months") {

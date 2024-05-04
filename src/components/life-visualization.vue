@@ -16,16 +16,14 @@ const MONTHS_PER_YEAR = 12;
 const props = defineProps<Props>();
 const emits = defineEmits(["onBack"]);
 
-const mode = ref<Mode>("days");
-const modes: Mode[] = ["days", "weeks", "months", "years"];
+const mode = ref<Mode>("weeks");
+const modes: Mode[] = ["weeks", "months", "years"];
 
 const age = computed(() => props.age);
-const days = computed(() => props.age * DAYS_PER_YEAR);
 const weeks = computed(() => props.age * WEEKS_PER_YEAR);
 const months = computed(() => props.age * MONTHS_PER_YEAR);
 
 const expectedAge = computed(() => props.expectedAge);
-const expectedDays = computed(() => props.expectedAge * DAYS_PER_YEAR);
 const expectedWeeks = computed(() => props.expectedAge * WEEKS_PER_YEAR);
 const expectedMonths = computed(() => props.expectedAge * MONTHS_PER_YEAR);
 
@@ -50,12 +48,6 @@ function setMode(newMode: Mode) {
   </div>
   <div class="w-4/5 md:w-full mx-auto">
     <button class="link-btn w-20 mb-5" @click="complete">← Back</button>
-    <LifeDots
-      type="days"
-      :value="days"
-      :expected-value="expectedDays"
-      v-if="mode === 'days'"
-    />
     <LifeDots
       type="weeks"
       :value="weeks"
